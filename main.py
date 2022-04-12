@@ -11,7 +11,6 @@ def main():
     saveToCSV(df)
     avgActualArrivalTime(df)
     
-
 def getData():
     '''
     Fetching data from digitraffic api
@@ -37,7 +36,7 @@ def normalizeData(responses):
     '''
     Normalizing the data
     '''
-    df = pd.json_normalize(responses).explode('timeTableRows')              #Normalize the data
+    df = pd.json_normalize(responses).explode('timeTableRows')                                     #Normalize the data
     df = pd.concat([df, df.pop("timeTableRows").apply(pd.Series)], axis=1)  #Getting the nested list timeTableRows on the same level as the other data
     return df
 
@@ -47,7 +46,7 @@ def saveToCSV(df):
     '''
     file_dir = os.path.dirname(os.path.abspath(__file__))          #Get path of working directory
     file_path = os.path.join(file_dir, file_dir, 'trainData.csv')  #Join the path of the working directory with the desired file name
-    df.to_csv(file_path, encoding='utf-8')                         #Save file
+    df.to_csv(file_path, index=False,encoding='utf-8')             #Save file
     print("Data saved to CSV at:{path} ".format(path=file_path))
 
 def avgActualArrivalTime(df):
@@ -64,7 +63,6 @@ def avgActualArrivalTime(df):
         tsum = tsum + tdelta                                                                                        # Sum up the arrival times
     taverage = tsum / len(s)                                                                                        # Calculate the average arrival time
     print("Average actual arrival time for March 2020: {time} ".format(time=taverage))                          
-        
         
 if __name__ == "__main__":
     main()
