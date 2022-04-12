@@ -58,7 +58,7 @@ def avgActualArrivalTime(df):
     s = dfHki.reset_index(drop=True)['actualTime']                                                                  #Reset index to be 1,2,3... instead of the old index
     tsum = datetime.timedelta()                                                                                     #Variable for storing the sum of the arrival times
     for time in s:
-        t = datetime.datetime.strptime(time.split(".")[0], '%Y-%m-%dT%H:%M:%S').strftime('%H:%M:%S')                #Split the string to get rid of the milliseconds(which are always 0) and the  timezone indicator Z(Zulu)
+        t = datetime.datetime.strptime(time.split(".")[0], '%Y-%m-%dT%H:%M:%S').strftime('%H:%M:%S')                #Split the string to get rid of the milliseconds(which are always 0), the  timezone indicator Z(Zulu) and the days & years.
         t = datetime.datetime.strptime(t,'%H:%M:%S')                                                                #The result of the last line is a string. Convert it into datetime
         tdelta = datetime.timedelta(hours=t.hour, minutes=t.minute, seconds=t.second, microseconds=t.microsecond)   # Convert to timedelta for calculations. Include microseconds for a more accurate average.
         tsum = tsum + tdelta                                                                                        # Sum up the arrival times
