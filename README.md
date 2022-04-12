@@ -7,7 +7,7 @@ Run the script from a terminal by being in the project directory and running the
 The CSV will be saved in the working directory.
 
 ### Docker
-If running via Docker use the commands below:
+If running via Docker run the ***runCSV.bat*** OR use the commands below:
 
 ***docker build -t pythontest .***
 
@@ -15,7 +15,7 @@ If running via Docker use the commands below:
 
 
 
-If you don't want to get access to the csv file simply run:
+If you don't want to get access to the csv file simply run the ***run.bat*** file OR use the commands below:
 
 ***docker build -t pythontest .***
 
