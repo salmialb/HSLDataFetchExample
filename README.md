@@ -1,6 +1,6 @@
 # SanomaPythonTest
 Assignment for the Junior Data Engineer position at Sanoma.
-The code contains comments.
+main.py contains comments.
 
 # Instructions
 Run the script from a terminal by being in the project directory and running the command: ***python main.py***
