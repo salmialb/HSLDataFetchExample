@@ -39,7 +39,7 @@ Responses are stored in a list.
 Checks that the response contains something, filtering out days when the train doesn't run.
 
 ## normalizeData()
-Normalizes the data using pandas normalize.
+Normalizes the data using Pandas normalize.
 Handling of the nested list "timetableRows" by first exploding it and then applying putting it back into individual columns.
 
 ## saveToCsv()
