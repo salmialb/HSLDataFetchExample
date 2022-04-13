@@ -46,7 +46,7 @@ def avgActualArrivalTime(df):
         t = datetime.datetime.strptime(t,'%H:%M:%S')                                                                #The result of the last line is a string. Convert it into datetime
         tdelta = datetime.timedelta(hours=t.hour, minutes=t.minute, seconds=t.second, microseconds=t.microsecond)   # Convert to timedelta for calculations. Include microseconds for a more accurate average.
         tsum = tsum + tdelta                                                                                        # Sum up the arrival times
-    taverage = tsum / len(arrivalTimes)                                                                                        # Calculate the average arrival time
+    taverage = tsum / len(arrivalTimes)                                                                             # Calculate the average arrival time
     print("Average actual arrival time for March 2020: {time} ".format(time=taverage))  
 
 def main():
