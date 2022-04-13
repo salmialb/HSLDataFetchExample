@@ -36,11 +36,11 @@ os
 Fetches the data for March 2020 by generating a range of dates and iterating through them. 
 One call per iteration.
 Responses are stored in a list.
-Checks that the response contains something filtering out days when the train doesn't run.
+Checks that the response contains something, filtering out days when the train doesn't run.
 
 ## normalizeData()
 Normalizes the data using pandas normalize.
-Handling of the nested list "timetableRowa" by first exploding it and then applying putting it back into individual columns.
+Handling of the nested list "timetableRows" by first exploding it and then applying putting it back into individual columns.
 
 ## saveToCsv()
 Saves the normalized data to a .csv in the working directory.
