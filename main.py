@@ -39,7 +39,7 @@ def saveToCSV(df):
 def avgActualArrivalTime(df):
     '''Calculate the average actual arrival time at the end station'''
     dfHki = df.loc[df['stationShortCode']=='HKI']                                                                   #Filter for arrivals at end destination
-    arrivalTimes = dfHki.reset_index(drop=True)['actualTime']                                                                  #Reset index to be 1,2,3... instead of the old index and only choose the actualTime column 
+    arrivalTimes = dfHki.reset_index(drop=True)['actualTime']                                                       #Reset index to be 1,2,3... instead of the old index and only choose the actualTime column 
     tsum = datetime.timedelta()                                                                                     #Variable for storing the sum of the arrival times
     for time in arrivalTimes:
         t = datetime.datetime.strptime(time.split(".")[0], '%Y-%m-%dT%H:%M:%S').strftime('%H:%M:%S')                #Split the string to get rid of the milliseconds(which are always 0), the  timezone indicator Z(Zulu) and the days & years.
